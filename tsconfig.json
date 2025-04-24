@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "target": "ES2020",
+        "sourceMap": true,
+        "lib": ["ES2020", "DOM"],
+        "module": "ESNext",
+        "skipLibCheck": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "moduleDetection": "force",
+        "jsx": "react-jsx",
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "allowSyntheticDefaultImports": true,
+        "paths": {
+            "@/*": ["./src/*"]
+        }
+    },
+    "exclude": ["node_modules"],
+    "include": ["src"],
+    "ts-node": {
+        "transpileOnly": true,
+        "happyPackMode": true,
+        "moduleTypes": {
+            "webpack.config.ts": "cjs"
+        }
+    }
+}

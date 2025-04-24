@@ -1,0 +1,63 @@
+{
+    "name": "only-test",
+    "private": true,
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "start": "webpack serve --env mode=development",
+        "build:dev": "webpack --env mode=development",
+        "build:prod": "webpack --env mode=production",
+        "prepare": "husky install"
+    },
+    "dependencies": {
+        "gsap": "^3.12.7",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
+        "swiper": "^11.2.6"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.25.1",
+        "@pmmmwh/react-refresh-webpack-plugin": "^0.5.16",
+        "@types/node": "^22.14.1",
+        "@types/react": "^19.1.2",
+        "@types/react-dom": "^19.1.2",
+        "@types/webpack": "^5.28.5",
+        "@typescript-eslint/parser": "^8.31.0",
+        "css-loader": "^7.1.2",
+        "eslint": "^9.25.1",
+        "eslint-config-prettier": "^10.1.2",
+        "eslint-plugin-import": "^2.31.0",
+        "eslint-plugin-jsx-a11y": "^6.10.2",
+        "eslint-plugin-prettier": "^5.2.6",
+        "eslint-plugin-react": "^7.37.5",
+        "eslint-plugin-security": "^3.0.1",
+        "eslint-plugin-sonarjs": "^3.0.2",
+        "fork-ts-checker-webpack-plugin": "^9.1.0",
+        "html-webpack-plugin": "^5.6.3",
+        "husky": "^8.0.0",
+        "lint-staged": "^15.5.1",
+        "mini-css-extract-plugin": "^2.9.2",
+        "prettier": "^3.5.3",
+        "sass": "^1.87.0",
+        "sass-loader": "^16.0.5",
+        "style-loader": "^4.0.0",
+        "ts-loader": "^9.5.2",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.3",
+        "typescript-eslint": "^8.31.0",
+        "webpack": "^5.99.6",
+        "webpack-cli": "^6.0.1",
+        "webpack-dev-server": "^5.2.1"
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": [
+            "eslint --fix",
+            "prettier --write",
+            "git add"
+        ],
+        "*.{json,css,scss}": [
+            "prettier --write",
+            "git add"
+        ]
+    }
+}
