@@ -2,6 +2,7 @@ import js from '@eslint/js';
 import tseslint from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import pluginReact from 'eslint-plugin-react';
+import pluginReactHook from 'eslint-plugin-react-hooks';
 import pluginSonarjs from 'eslint-plugin-sonarjs';
 import pluginSecurity from 'eslint-plugin-security';
 import pluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
@@ -35,6 +36,7 @@ export default defineConfig([
             import: pluginImport,
             'jsx-a11y': pluginJsxA11y,
             '@typescript-eslint': tseslint,
+            'react-hooks': pluginReactHook,
             settings: {
                 react: {
                     version: 'detect',
@@ -48,6 +50,7 @@ export default defineConfig([
             },
             rules: {
                 ...pluginReact.configs.recommended.rules,
+                ...pluginReactHook.configs.recommended.rules,
                 ...pluginJsxA11y.configs.recommended.rules,
                 ...tseslint.configs.recommended.rules,
                 ...pluginSonarjs.configs.recommended.rules,

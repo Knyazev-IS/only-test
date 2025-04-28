@@ -1,0 +1,88 @@
+.section {
+    width: 100%;
+    max-width: 120px;
+    margin-left: 80px;
+
+    @media (width < 768px) {
+        position: absolute;
+        bottom: 15px;
+        margin-left: 20px;
+    }
+
+    @media (width < 500px) {
+        max-width: 58px;
+    }
+}
+
+.range {
+    font-size: 14px;
+    margin: 0;
+    padding-bottom: 20px;
+
+    @media (width < 500px) {
+        padding-bottom: 10px;
+    }
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    border: 1px solid var(--button-border-color);
+    height: 50px;
+    width: 50px;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background-color 0.1s linear;
+    padding: 0 2px 2px 0;
+
+    &:hover:not(:disabled) {
+        background-color: #fff;
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        border: solid var(--primary-color);
+        border-width: 0 2px 2px 0;
+        width: 8px;
+        height: 8px;
+    }
+
+    &:disabled {
+        cursor: default;
+        border-color: var(--button-disabled-border-color);
+
+        &::after {
+            position: absolute;
+            content: '';
+            border-color: var(--button-disabled-arrow-color);
+        }
+    }
+
+    @media (width < 500px) {
+        height: 25px;
+        width: 25px;
+
+        &::after {
+            width: 4px;
+            height: 4px;
+        }
+    }
+}
+
+.button-next {
+    @extend .button;
+    transform: rotate(-45deg);
+}
+
+.button-prev {
+    @extend .button;
+    transform: rotate(135deg);
+}

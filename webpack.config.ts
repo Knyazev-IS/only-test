@@ -5,12 +5,7 @@ import { Configuration } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
-
-interface Env {
-    mode?: 'development' | 'production';
-    port?: number;
-    platform?: 'desktop' | 'mobile';
-}
+import { Env } from './src/common/types/Env';
 
 export default (env: Env) => {
     const isDev = env.mode === 'development';
@@ -24,7 +19,6 @@ export default (env: Env) => {
           }
         : undefined;
 
-    // @ts-ignore
     const config: Configuration = {
         mode: env.mode ?? 'development',
         entry: path.resolve(__dirname, 'src', 'main.tsx'),
@@ -44,10 +38,6 @@ export default (env: Env) => {
                 template: path.resolve(__dirname, 'src', 'index.html'),
             }),
             new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
-            new DefinePlugin({
-                PLATFORM: JSON.stringify(env.platform),
-                ENV: JSON.stringify(env.mode),
-            }),
             new ForkTsCheckerWebpackPlugin(),
             isDev && new ReactRefreshWebpackPlugin(),
         ],
@@ -57,6 +47,13 @@ export default (env: Env) => {
                     test: /\.(ts|tsx)$/i,
                     use: 'ts-loader',
                     exclude: /node_modules/,
+                },
+                {
+                    test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                    type: 'asset/resource',
+                    generator: {
+                        filename: 'fonts/[name][ext]',
+                    },
                 },
                 {
                     test: /\.css$/i,

@@ -1,5 +1,78 @@
-.container {
+.main {
     max-width: 1440px;
-    background-color: gold;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: linear-gradient(var(--primary-border-color), var(--primary-border-color)) no-repeat center / 1px 100%;
+    border-left: 1px solid var(--primary-border-color);
+    border-right: 1px solid var(--primary-border-color);
+
+    @media (width < 768px) {
+        background: none;
+        border-left: none;
+        border-right: none;
+    }
+}
+
+.title {
+    position: relative;
+    margin: 0;
+    padding-top: 170px;
+    padding-left: 80px;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 120%;
+    max-width: 353px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 5px;
+        height: 120px;
+        background: linear-gradient(180deg, var(--slidder-date-color), var(--end-date-desktop-color));
+        bottom: 10px;
+        left: -1px;
+    }
+
+    @media (width < 1024px) {
+        font-size: 44px;
+        padding-top: 59px;
+
+        &::before {
+            height: 100px;
+        }
+    }
+
+    @media (width < 768px) {
+        font-size: 36px;
+        max-width: 300px;
+        padding-left: 20px;
+
+        &::before {
+            display: none;
+        }
+    }
+
+    @media (width < 500px) {
+        font-size: 20px;
+        max-width: 123px;
+    }
+}
+
+.mobile-title {
+    display: none;
+    position: absolute;
+    left: 20px;
+    top: 280px;
+    font-weight: 700;
+    font-size: 14px;
+
+    @media (width < 768px) {
+        display: block;
+    }
+
+    @media (width < 500px) {
+        top: 230px;
+    }
 }

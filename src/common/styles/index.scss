@@ -1,0 +1,48 @@
+:root {
+    --primary-color: #42567a;
+    --background-color: #f4f5f9;
+
+    --start-date-color: #5d5fef;
+    --end-date-desktop-color: #ef5da8;
+    --end-date-mobile-color: #f178b6;
+
+    --slidder-date-color: #3877ee;
+
+    --primary-border-color: #d0d5e0;
+    --period-border-color: #9299a8;
+    --button-border-color: #9ba5ba;
+    --button-disabled-border-color: #c7cdd9;
+    --button-disabled-arrow-color: #9ba5b9;
+
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src:
+        url('../../common/fonts/PTSans-Regular.woff2') format('woff2'),
+        url('../../common/fonts/PTSans-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src:
+        url('../../common/fonts/PTSans-Bold.woff2') format('woff2'),
+        url('../../common/fonts/PTSans-Bold.ttf') format('ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src:
+        url('../../common/fonts/BebasNeue-Regular.woff2') format('woff2'),
+        url('../../common/fonts/BebasNeue-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}

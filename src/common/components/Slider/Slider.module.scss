@@ -1,0 +1,110 @@
+.slider {
+    padding-left: 80px;
+    padding-right: 80px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 56px;
+    margin-bottom: 100px;
+    min-height: 156px;
+
+    @media (width < 768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    @media (width < 500px) {
+        margin-top: 80px;
+    }
+}
+
+.slide {
+    max-width: 320px;
+    min-height: 135px;
+    font-size: 25px;
+    cursor: pointer;
+
+    .date {
+        margin: 0;
+        padding-bottom: 15px;
+        font-family: 'Bebas Neue', sans-serif;
+        color: var(--slidder-date-color);
+    }
+
+    .description {
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+    }
+
+    @media (width < 500px) {
+        font-size: 16px;
+        width: 100%;
+
+        .description {
+            font-size: 14px;
+        }
+    }
+}
+
+.inactive-slide {
+    @extend .slide;
+
+    @media (width < 500px) {
+        .description,
+        .date {
+            opacity: 0.4;
+        }
+    }
+}
+
+.navigation-buttons {
+    position: absolute;
+    width: calc(100% - 40px);
+    left: 20px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+
+    @media (width < 768px) {
+        display: none;
+    }
+}
+
+.button {
+    background-color: #fff;
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 9999px;
+    box-shadow: 0 0 15px 0 var(--slidder-date-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+    padding: 0 2px 2px 0;
+    margin-top: 40px;
+
+    &::after {
+        position: absolute;
+        content: '';
+        border: solid var(--slidder-date-color);
+        border-width: 0 2px 2px 0;
+        width: 6px;
+        height: 6px;
+    }
+
+    &:disabled {
+        visibility: hidden;
+    }
+}
+
+.button-next {
+    @extend .button;
+    transform: rotate(-45deg);
+}
+
+.button-prev {
+    @extend .button;
+    transform: rotate(135deg);
+}
