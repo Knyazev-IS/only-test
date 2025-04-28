@@ -9,7 +9,7 @@ import styles from './App.module.scss';
 export const App = () => {
     const { dataTimePeriods, periodNum, dotAngle, animationTime } = useFetchTimePeriods();
     const [period, setPeriod] = useState(0);
-    const [rotationAngle, setRotationAngle] = useState(0);
+    const [rotationAngle, setRotationAngle] = useState(dotAngle);
     const [rotationTime, setRotationTime] = useState(animationTime * 1000);
     const [startDate, setStartDate] = useState(dataTimePeriods[0].events[0].date);
     const [endDate, setEndDate] = useState(dataTimePeriods[0].events.at(-1).date);
