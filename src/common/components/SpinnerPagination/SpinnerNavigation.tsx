@@ -1,4 +1,5 @@
 import styles from './SpinnerNavigation.module.scss';
+import { memo } from 'react';
 
 interface SpinnerNavigationProps {
     curPeriod: number;
@@ -6,7 +7,7 @@ interface SpinnerNavigationProps {
     changeEvents: (event: number) => void;
 }
 
-export const SpinnerNavigation = ({ curPeriod, periodNum, changeEvents }: SpinnerNavigationProps) => {
+export const SpinnerNavigation = memo(({ curPeriod, periodNum, changeEvents }: SpinnerNavigationProps) => {
     const handleClickNext = () => {
         changeEvents(curPeriod + 1);
     };
@@ -30,4 +31,4 @@ export const SpinnerNavigation = ({ curPeriod, periodNum, changeEvents }: Spinne
             </div>
         </section>
     );
-};
+});
